@@ -113,7 +113,7 @@ test("colocar um produto no carrinho diminui o estoque do produto", async () => 
   expect(produtoAtualizado.quantidade).toBe(9);
 
 
-}, 15000); // o teste pode levar até 5 segundos
+}, 10000); // o teste pode levar até 10 segundos
 
 
 test("Retirar item do carrinho", async () => {
@@ -130,7 +130,7 @@ test("Retirar item do carrinho", async () => {
   // Espectativa de receber 10, para sinalizar que o produto foi devolvido ao estoque
 
   expect(produtoAtualizado.quantidade).toBe(10);
-}, 15000);
+}, 10000); // o teste pode levar até 10 segundos
 
 
 test("Apagar produto dentro do carrinho", async () => {
@@ -197,7 +197,7 @@ test("Apagar produto dentro do carrinho", async () => {
   const corpo = (await apagar.json()) as { message: string };
   console.log("Mensagem da API:", corpo.message);
   
-}, 15000)
+}, 10000); // o teste pode levar até 10 segundos
 
 
 
